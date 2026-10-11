@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.birddetect'
+    compileSdk 35
+    ndkVersion "29.0.14206865"
+
+    defaultConfig {
+        applicationId "com.birddetect"
+        minSdkVersion 29
+        targetSdkVersion 35
+        versionCode 1
+        versionName "0.1"
+
+        ndk {
+            abiFilters 'arm64-v8a'
+        }
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON"
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildTypes {
+        release {
+            // Benchmarks need a release build; the debug key keeps it installable without a keystore.
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            version "3.31.5"
+            path file('src/main/jni/CMakeLists.txt')
+        }
+    }
+
+    androidResources {
+        // ncnn reads model files with AAsset; keep them uncompressed.
+        noCompress 'bin', 'param'
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+}

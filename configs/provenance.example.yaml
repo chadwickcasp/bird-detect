@@ -1,0 +1,30 @@
+# Copy to data/provenance/sources.yaml. That copy stays local and out of Git.
+# One entry per still or clip. Paths are relative to data/.
+# `python -m ml.record_capture` appends new files and fills camera fields from still EXIF.
+# It never overwrites a field you already set.
+items:
+  - path: incoming/stills/PXL_20261011_154210123.jpg
+    # Frames, crops, and augmentations inherit this session. Splits are assigned by session.
+    session_id: 20261011-pixel-9-pro-park
+    media_type: still            # still | clip
+    camera_make: Google
+    camera_model: Pixel 9 Pro
+    lens: Pixel 9 Pro back camera 6.9mm f/1.68   # EXIF LensModel when present
+    focal_length_mm: 6.9
+    capture_time: "2026-10-11T15:42:10"
+    author: Chad Casper
+    license: own work
+    source_url: null             # page URL for public images or clips
+    notes: ""
+  - path: incoming/clips/PXL_20261011_160002345.mp4
+    session_id: 20261011-pixel-9-pro-park
+    media_type: clip
+    camera_make: Google
+    camera_model: Pixel 9 Pro
+    lens: rear 1x
+    focal_length_mm: null
+    capture_time: "2026-10-11T16:00:02"
+    author: Chad Casper
+    license: own work
+    source_url: null
+    notes: "30 fps SDR, stock camera app"

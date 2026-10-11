@@ -1,0 +1,82 @@
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# Android / Gradle / native builds
+.gradle/
+.kotlin/
+**/build/
+local.properties
+.externalNativeBuild/
+.cxx/
+cmake-build-*/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.hprof
+captures/
+
+# Signing material and credentials
+*.jks
+*.keystore
+keystore.properties
+.env
+.env.*
+!.env.example
+secrets/
+credentials*.json
+
+# Prebuilt native packages (android/fetch_native_deps.sh) and staged model assets (ml/stage_android_model.py)
+/android/app/src/main/jni/ncnn-*-android-vulkan/
+/android/app/src/main/jni/opencv-mobile-*-android/
+/android/app/src/main/assets/models/
+/android/app/src/main/assets/fixtures/
+/android/g4smoke/src/main/assets/
+
+# Python / training environment
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Local datasets, weights, and generated experiment outputs
+/data/
+/datasets/
+/weights/
+/checkpoints/
+/artifacts/
+/outputs/
+/runs/
+/wandb/
+/mlruns/
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.ncnn.bin
+
+# Temporary files and logs
+*.log
+/tmp/
+/temp/
+
+# Local hosted-page checkout and packaging
+.sites-runtime/

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:extractNativeLibs="true"
+        android:label="G4 Smoke"
+        android:theme="@android:style/Theme.Material.NoActionBar">
+        <!-- The Google Tensor dispatch library dlopens these public vendor libraries (/vendor/etc/public.libraries.txt). -->
+        <uses-native-library android:name="libedgetpu_litert.so" android:required="false" />
+        <uses-native-library android:name="libedgetpu_util.so" android:required="false" />
+        <activity
+            android:name=".SmokeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

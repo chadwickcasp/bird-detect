@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bird Detect</string>
+    <string name="choose">Choose</string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
+    <string name="run_fixtures">Fixtures</string>
+    <string name="picked_image">Picked image</string>
+
+    <!-- Order matches MainActivity.SOURCE_* indices. -->
+    <string-array name="source_names">
+        <item>Camera</item>
+        <item>Image</item>
+        <item>Clip</item>
+    </string-array>
+
+    <!-- Order matches MainActivity.BACKEND_CHOICES. -->
+    <string-array name="backend_names">
+        <item>CPU FP32</item>
+        <item>CPU FP16</item>
+        <item>GPU FP32</item>
+        <item>GPU FP16</item>
+    </string-array>
+</resources>

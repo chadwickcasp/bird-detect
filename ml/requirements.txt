@@ -1,0 +1,19 @@
+# Host environment for export, parity, data review, and the distillation smoke test.
+# Verified October 10, 2026 on macOS arm64 with Python 3.11.
+# Install: uv venv --python 3.11 .venv && uv pip install --python .venv/bin/python -r ml/requirements.txt
+# ncnn must be installed without dependencies so it does not pull a second OpenCV:
+#   uv pip install --python .venv/bin/python --no-deps ncnn==1.0.20260526
+ultralytics==8.4.175
+# litert-torch pins torch; torchvision must match that torch build.
+torch==2.13.0
+torchvision==0.28.0
+# Ultralytics pins this pnnx release for ncnn export.
+pnnx==20260526
+litert-torch==0.9.4
+ai-edge-litert==2.2.0
+numpy==2.4.6
+opencv-python==5.0.0.93
+pillow==12.3.0
+pyyaml==6.0.3
+pytest
+jupyter

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#087e81"><title>Bird annotation review</title>
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main id="editor">
+  <header><h1>Review birds</h1><button id="queue-open">Queue</button></header>
+  <section class="identity"><div><span id="review-status">Candidate</span><span id="save-status" role="status" aria-live="polite">Loading queue…</span></div><p id="filename">Choose an image to review</p></section>
+  <div id="notice" role="alert" hidden><span id="notice-text"></span><button id="retry">Retry</button><button id="reload-item">Reload image</button><button id="recover-draft" hidden>Recover device draft</button><button id="export-draft" hidden>Save device draft</button></div>
+  <section class="workspace">
+    <div class="stage"><canvas id="canvas" tabindex="0" aria-label="Image annotation canvas. Pinch to zoom. Select a box to move it or drag its corner handles."></canvas><div id="canvas-message">Loading candidates…</div></div>
+    <div class="tools">
+      <div class="tool-row"><button class="selected" data-mode="select">Select</button><button data-mode="pan">Pan</button><button data-mode="add">Add box</button><button id="fit">Fit</button><button id="zoom" aria-label="Zoom in">100%</button></div>
+      <div class="tool-row secondary"><button id="undo" disabled>Undo</button><button id="redo" disabled>Redo</button><button id="boxes-visible" aria-pressed="true">Hide boxes</button><button id="delete" disabled>Delete</button></div>
+    </div>
+    <section class="inspector" aria-label="Box adjustments">
+      <div class="inspector-heading"><select id="box-select" aria-label="Selected bird box"><option>No boxes</option></select><button id="focus" disabled>Focus</button></div>
+      <div class="coordinates">
+        <label>Left<input id="box-x" type="number" min="0" step="1" inputmode="numeric" disabled></label>
+        <label>Top<input id="box-y" type="number" min="0" step="1" inputmode="numeric" disabled></label>
+        <label>Width<input id="box-width" type="number" min="1" step="1" inputmode="numeric" disabled></label>
+        <label>Height<input id="box-height" type="number" min="1" step="1" inputmode="numeric" disabled></label>
+      </div>
+      <div class="fine-tune"><span>Fine tune</span><div><select id="adjust-mode" aria-label="Adjustment target"><option value="move">Move</option><option value="left">Left edge</option><option value="right">Right edge</option><option value="top">Top edge</option><option value="bottom">Bottom edge</option></select><button data-nudge="left" aria-label="Nudge left"><svg viewBox="0 0 24 24"><path d="m14 6-6 6 6 6M8 12h12"/></svg></button><button data-nudge="up" aria-label="Nudge up"><svg viewBox="0 0 24 24"><path d="m6 14 6-6 6 6M12 8v12"/></svg></button><button data-nudge="down" aria-label="Nudge down"><svg viewBox="0 0 24 24"><path d="m6 10 6 6 6-6M12 16V4"/></svg></button><button data-nudge="right" aria-label="Nudge right"><svg viewBox="0 0 24 24"><path d="m10 6 6 6-6 6M16 12H4"/></svg></button><select id="nudge-step" aria-label="Adjustment step"><option value="1">1 px</option><option value="5">5 px</option><option value="10">10 px</option></select></div></div>
+      <textarea id="notes" rows="1" maxlength="4000" placeholder="Review notes…" aria-label="Review notes"></textarea>
+      <details id="model-tools" open><summary>Start with YOLO</summary>
+        <label>Model<select id="model-select" aria-label="YOLO model" disabled><option>Loading models…</option></select></label>
+        <div class="model-controls"><label>Minimum score<input id="model-confidence" aria-label="Minimum model score" type="number" min="0.01" max="0.99" step="0.01" value="0.15" inputmode="decimal"></label><button id="run-model" disabled>Run YOLO</button></div>
+        <p class="small" id="model-status" role="status" aria-live="polite">Generate starting boxes for this frame, then review them.</p>
+        <div id="model-preview" hidden><label class="check"><input id="show-model" type="checkbox" checked> Show model preview</label><div class="extra-actions"><button id="use-model" disabled>Use model boxes</button><button id="dismiss-model">Dismiss preview</button></div></div>
+        <p class="small">Purple boxes are model suggestions. Use model boxes replaces this draft's boxes and supports Undo. Approved labels require Reopen review first.</p>
+      </details>
+      <details id="details"><summary>More review tools</summary>
+        <div class="extra-actions"><button id="duplicate">Duplicate box</button><button id="history-open">History</button><button id="import-labels">Import YOLO</button></div>
+        <label class="check"><input id="compare" type="checkbox"> Compare source boxes</label>
+        <label class="check"><input id="negative" type="checkbox"> Confirmed no birds</label>
+        <p class="small">Confirming no birds clears draft boxes. Undo restores them.</p>
+        <fieldset><legend>Image flags</legend><div id="image-flags"></div></fieldset>
+        <fieldset><legend>Selected box flags</legend><div id="box-flags"></div></fieldset>
+        <p id="source-info" class="small"></p><a id="source-link" target="_blank" rel="noopener" hidden>Open original source</a>
+        <p class="small">Two fingers: zoom and pan. In Select mode, drag a box or its corner. Pan mode moves the view. Numeric fields use source-image pixels.</p>
+        <p class="small">Desktop: Delete removes a box. Arrow keys nudge. Shift uses five pixels. Ctrl/Cmd+Z undoes; Shift+Z redoes.</p>
+      </details>
+    </section>
+  </section>
+  <footer><button id="needs-work">Needs work</button><button id="approve" class="primary">Approve &amp; next</button><button id="skip" class="text-button">Skip</button></footer>
+</main>
+<dialog id="queue-dialog" aria-labelledby="queue-title">
+  <div class="dialog-header"><h2 id="queue-title">Review queue</h2><button data-close="queue-dialog">Close</button></div>
+  <div class="queue-controls"><select id="queue-filter" aria-label="Review queue filter"><option value="pending">Unreviewed &amp; drafts</option><option value="candidate">Candidates</option><option value="draft">Drafts</option><option value="needs_work">Needs work</option><option value="approved">Approved</option><option value="all">All images</option></select><input id="queue-search" type="search" aria-label="Search images" placeholder="Search name or frame…"></div>
+  <div class="queue-actions"><button id="refresh">Refresh</button><button id="upload">Add images</button><a class="button" id="export-reviewed" href="/api/export">Export reviewed</a></div>
+  <p id="queue-count" class="small"></p><div id="queue-list"></div><button id="queue-more" hidden>Show more</button>
+  <details><summary>How new candidates arrive</summary><p class="small">New photos in incoming/stills and extracted frames appear automatically. Proposed YOLO labels are loaded from labels_proposed. Your saved Open Images picks also appear; opening one downloads its photo and source boxes for review. You can add JPEG or PNG photos from your phone.</p></details>
+</dialog>
+<dialog id="history-dialog" aria-labelledby="history-title"><div class="dialog-header"><h2 id="history-title">Review history</h2><button data-close="history-dialog">Close</button></div><p class="small">Restoring a version creates a draft. Approval remains a separate action.</p><div id="history-list"></div></dialog>
+<dialog id="model-replace-dialog" aria-labelledby="model-replace-title"><h2 id="model-replace-title">Replace draft boxes?</h2><p id="model-replace-message" class="small"></p><div class="extra-actions"><button data-close="model-replace-dialog">Cancel</button><button id="confirm-model" class="primary">Replace boxes</button></div></dialog>
+<input id="upload-input" type="file" accept="image/jpeg,image/png" multiple hidden><input id="label-input" type="file" accept=".txt" hidden>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

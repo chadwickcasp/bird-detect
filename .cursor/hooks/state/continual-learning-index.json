@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "lastRunAtMs": 1791760904657,
+  "transcripts": {
+    "2769f078-62ab-4456-bc9f-432acd1a4bba": {
+      "mtimeMs": 1791657599924,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/2769f078-62ab-4456-bc9f-432acd1a4bba/2769f078-62ab-4456-bc9f-432acd1a4bba.jsonl"
+    },
+    "2a344329-9474-4394-a593-bf906d4f1b3f": {
+      "mtimeMs": 1791658653036,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/2a344329-9474-4394-a593-bf906d4f1b3f/2a344329-9474-4394-a593-bf906d4f1b3f.jsonl"
+    },
+    "ce8369a5-e2b2-4620-8f9a-801417892e08": {
+      "mtimeMs": 1791658648310,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/2a344329-9474-4394-a593-bf906d4f1b3f/subagents/ce8369a5-e2b2-4620-8f9a-801417892e08.jsonl"
+    },
+    "416a2edf-f98e-4ad8-8be0-1790f0b14fc0": {
+      "mtimeMs": 1791744873130,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/416a2edf-f98e-4ad8-8be0-1790f0b14fc0/416a2edf-f98e-4ad8-8be0-1790f0b14fc0.jsonl"
+    },
+    "a7698f18-2955-4533-be5b-2f1fb4aea0f0": {
+      "mtimeMs": 1791665374823,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/416a2edf-f98e-4ad8-8be0-1790f0b14fc0/subagents/a7698f18-2955-4533-be5b-2f1fb4aea0f0.jsonl"
+    },
+    "aa2e3afd-c68e-411e-ae98-379537fdc0ba": {
+      "mtimeMs": 1791742997820,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/aa2e3afd-c68e-411e-ae98-379537fdc0ba/aa2e3afd-c68e-411e-ae98-379537fdc0ba.jsonl"
+    },
+    "3838bc76-24b9-4c35-be91-6126a5642f25": {
+      "mtimeMs": 1791687138769,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/3838bc76-24b9-4c35-be91-6126a5642f25/3838bc76-24b9-4c35-be91-6126a5642f25.jsonl"
+    },
+    "fb6a760e-5bee-4742-8d07-1fa55cdccc59": {
+      "mtimeMs": 1791686305847,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/aa2e3afd-c68e-411e-ae98-379537fdc0ba/subagents/fb6a760e-5bee-4742-8d07-1fa55cdccc59.jsonl"
+    },
+    "07b080e8-6833-4125-8340-2a4a3cf92575": {
+      "mtimeMs": 1791747035580,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/07b080e8-6833-4125-8340-2a4a3cf92575/07b080e8-6833-4125-8340-2a4a3cf92575.jsonl"
+    },
+    "7fcadc05-2d5e-49a7-ba09-99f3e8c7919c": {
+      "mtimeMs": 1791742058308,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/07b080e8-6833-4125-8340-2a4a3cf92575/subagents/7fcadc05-2d5e-49a7-ba09-99f3e8c7919c.jsonl"
+    },
+    "9b84ba11-57de-4d4a-860d-47589f1389d4": {
+      "mtimeMs": 1791742893723,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/aa2e3afd-c68e-411e-ae98-379537fdc0ba/subagents/9b84ba11-57de-4d4a-860d-47589f1389d4.jsonl"
+    },
+    "1daa25d7-5494-49cf-a227-b2ad97b73619": {
+      "mtimeMs": 1791760665714,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/1daa25d7-5494-49cf-a227-b2ad97b73619/1daa25d7-5494-49cf-a227-b2ad97b73619.jsonl"
+    },
+    "8a3f7ab1-b5d9-4f01-a645-a019a040f551": {
+      "mtimeMs": 1791744563138,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/8a3f7ab1-b5d9-4f01-a645-a019a040f551/8a3f7ab1-b5d9-4f01-a645-a019a040f551.jsonl"
+    },
+    "ced87e60-2aa2-4aeb-a560-611e876b6fc0": {
+      "mtimeMs": 1791743791424,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/ced87e60-2aa2-4aeb-a560-611e876b6fc0/ced87e60-2aa2-4aeb-a560-611e876b6fc0.jsonl"
+    },
+    "8704532d-5bab-4253-b57c-bfe469cc2f20": {
+      "mtimeMs": 1791744684237,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/07b080e8-6833-4125-8340-2a4a3cf92575/subagents/8704532d-5bab-4253-b57c-bfe469cc2f20.jsonl"
+    },
+    "5e96e7e2-203b-4549-a92c-2dcf1a43c39b": {
+      "mtimeMs": 1791760903563,
+      "path": "/Users/chadcasper/.cursor/projects/Users-chadcasper-Documents-Computer-Vision-Sandbox-bird-detect/agent-transcripts/1daa25d7-5494-49cf-a227-b2ad97b73619/subagents/5e96e7e2-203b-4549-a92c-2dcf1a43c39b.jsonl"
+    }
+  }
+}

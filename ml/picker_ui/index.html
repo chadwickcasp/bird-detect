@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flying-bird photo picker</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<main>
+  <header><div><h1>Pick flying-bird photos</h1><p>Scan the grid. Keep the photos you want. Your picks save automatically.</p></div><div class="header-actions"><button id="picks">My picks (0)</button><a class="button primary" id="export" href="/api/export">Export picks</a></div></header>
+  <div class="toolbar"><select id="filter" aria-label="Photo filter"><option value="all">All bird photos</option><option value="unreviewed">Unreviewed photos</option><option value="keep">My picks</option><option value="unsure">Unsure photos</option><option value="skip">Skipped photos</option></select><div><label><input type="checkbox" id="show-boxes"> Show bird boxes</label><button id="undo" disabled>Undo</button></div></div>
+  <p class="source-line" id="catalog-info">Open Images · Camera and location unverified</p>
+  <div id="status" role="status" aria-live="polite">Loading the bird gallery…</div>
+  <section id="grid" aria-label="Bird photos"></section>
+  <p id="empty" hidden>No photos in this view yet.</p>
+  <footer><button id="more" hidden>Load more photos</button><p id="count"></p><small id="catalog-note">Flight-related titles appear first. Birds in flight still need visual selection. Approved and Needs work photos are hidden on reload; saved picks and exports remain intact.</small></footer>
+</main>
+<dialog id="preview" aria-labelledby="preview-title">
+  <div class="modal-top"><h2 id="preview-title">Photo preview</h2><button id="close">Close</button></div>
+  <div id="large-photo"></div>
+  <p id="attribution"></p><a id="original" target="_blank" rel="noopener">Open source and annotations</a>
+  <label class="notes-label" for="notes">Notes (optional: tiny birds, blur, noise, backlighting)</label><textarea id="notes" rows="2" maxlength="2000"></textarea>
+  <div class="modal-actions"><div><button id="previous">Previous</button><button id="next">Next</button></div><div><button data-decision="skip">Skip</button><button data-decision="unsure">Unsure</button><button class="primary" data-decision="keep">Keep</button></div></div>
+  <p class="hint">K: Keep · S: Skip · U: Unsure · Arrow keys: browse · Esc: close</p>
+</dialog>
+<script src="/app.js" defer></script>
+</body></html>
